@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.dkadem.bulut.downsong.Anasayfa"
+    tools:showIn="@layout/app_bar_anasayfa">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:id="@+id/relAramaKutusu"
+            android:layout_height="wrap_content">
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/editAranacak"
+                android:padding="10dp"
+                android:hint="Ne aramıştınız?"
+                android:selectAllOnFocus="true"
+                android:singleLine="true"
+                android:background="@drawable/text_drawable"/>
+
+            <ImageView
+                android:layout_width="52dp"
+                android:layout_height="52dp"
+                android:id="@+id/imageSearch"
+                android:src="@drawable/s96"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginRight="30dp"
+                android:layout_marginEnd="30dp"
+                android:layout_alignBottom="@+id/editAranacak" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/relAramaKutusu"
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:ads="http://schemas.android.com/apk/res-auto"
+            android:background="#ffffff"
+            android:id="@+id/relativeReklamSatir">
+            <com.google.android.gms.ads.AdView android:id="@+id/adView"
+                android:layout_width="match_parent"
+                android:background="#ffffff"
+                android:layout_height="wrap_content"
+                ads:adUnitId="ca-app-pub-7918414104816400/5289724179"
+                ads:adSize="SMART_BANNER"/>
+        </RelativeLayout>
+        <ListView
+            android:layout_below="@id/relativeReklamSatir"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/relativeMediaPlayer"
+            android:id="@+id/listSongs"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/relativeMediaPlayer"
+            android:padding="10dp"
+            android:background="@drawable/text_drawable"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:text="Sanatçı ve Şarkının adının yer alacağı kısım"
+                android:textStyle="bold"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentTop="true"
+                android:id="@+id/textSonSanatciVeSarkiAdi"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/relBuffer"
+                android:layout_below="@id/textSonSanatciVeSarkiAdi">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/buffer"
+                    android:id="@+id/imageBuffer"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentLeft="true"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Hafızaya alınıyor %0"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="5dp"
+                    android:layout_toRightOf="@id/imageBuffer"
+                    android:layout_toEndOf="@id/imageBuffer"
+                    android:layout_centerVertical="true"
+                    android:id="@+id/textSonBuffering"/>
+            </RelativeLayout>
+            <SeekBar
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/relBuffer"
+                android:clickable="false"
+                android:progressDrawable="@drawable/red_scrubber_progress"
+                android:thumb="@drawable/seekbar"
+                android:id="@+id/seekBar"/>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/mediaIcons"
+                android:layout_below="@id/seekBar"
+                android:layout_marginBottom="10dp">
+                <ImageView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:src="@drawable/play"
+                    android:id="@+id/btnPlay"
+                    android:layout_centerHorizontal="true"/>
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/stop"
+                    android:id="@+id/btnStop"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/btnPlay"
+                    android:layout_toEndOf="@+id/btnPlay"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginStart="25dp" />
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/soundon"
+                    android:id="@+id/btnSound"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@id/btnPlay"
+                    android:layout_toStartOf="@id/btnPlay"
+                    android:layout_marginRight="25dp"
+                    android:layout_marginEnd="25dp"/>
+
+            </RelativeLayout>
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/ac_paylas"
+        android:title="Paylaş"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/ac_diger_uygulamalar"
+        android:title="Diğer Uygulamalar"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/ac_cikis"
+        android:title="Çıkış"
+        app:showAsAction="never" />
+</menu>
